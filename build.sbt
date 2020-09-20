@@ -13,6 +13,9 @@ libraryDependencies += "com.typesafe" % "config" % "1.4.0"
 
 libraryDependencies +=  "org.scalaj" %% "scalaj-http" % "2.4.2"
 
+libraryDependencies += "org.scalactic" %% "scalactic" % "3.2.0"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.0" % "test"
+
 libraryDependencies ++= Seq(
   "io.circe"  %% "circe-core"     % circeVersion,
   "io.circe"  %% "circe-generic"  % circeVersion,
