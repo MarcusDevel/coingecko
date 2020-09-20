@@ -7,7 +7,7 @@ import io.circe.parser
 import scalaj.http.Http
 import io.circe.generic.auto._
 
-class CoinGeckoClient(apiVersion: Int) extends Logging {
+class CoinGeckoClient(apiVersion: Int) extends Logging  {
 
   def apiAddress = s"https://api.coingecko.com/api/v$apiVersion"
 

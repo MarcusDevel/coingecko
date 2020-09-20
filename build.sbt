@@ -21,3 +21,7 @@ libraryDependencies ++= Seq(
   "io.circe"  %% "circe-generic"  % circeVersion,
   "io.circe"  %% "circe-parser"   % circeVersion
 )
+
+coverageMinimum := 80
+coverageFailOnMinimum := true
+coverageExcludedPackages := ".*coingecko.app*"
