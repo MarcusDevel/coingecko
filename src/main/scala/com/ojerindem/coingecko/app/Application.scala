@@ -1,8 +1,11 @@
 package com.ojerindem.coingecko.app
 
-import com.ojerindem.coingecko.client.CoinGeckoClient
+import com.ojerindem.coingecko.client.{CoinGeckoClient}
 import com.ojerindem.coingecko.utils.Logging
 
+/** Prints the result of the ping API*/
+
 object Application extends App with Logging {
-  println(CoinGeckoClient(apiVersion = 3).ping)
+  val coinGeckoInstance = CoinGeckoClient()
+  println(coinGeckoInstance.ping)
 }
