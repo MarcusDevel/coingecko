@@ -1,4 +1,5 @@
 package com.ojerindem.coingecko.client
+import com.ojerindem.coingecko.ApiAddress
 import com.ojerindem.coingecko.utils.Exceptions.UnknownApiPathException
 import org.scalatest.flatspec.AnyFlatSpec
 
@@ -10,9 +11,8 @@ class CoinGeckoClientSpec extends AnyFlatSpec {
   }
 
   it should "throw an UnknownApiPathException for an incorrect API address" in {
-    class CoinGeckoClientTest extends CoinGeckoClient(3) {
-      override def apiAddress: String = s"https://api.coingecko.com/api/v3/pong"
-    }
+    implicit val apiAddress = ApiAddress(s"https://api.coingecko.com/api/v3/pong")
+    class CoinGeckoClientTest extends CoinGeckoClient() {}
 
     assertThrows[UnknownApiPathException] {
       (new CoinGeckoClientTest).ping
