@@ -1,6 +1,6 @@
 package com.ojerindem.coingecko.client
 
-import com.ojerindem.coingecko.Environment.{Error, Ping}
+import com.ojerindem.coingecko.Environment.{Ping}
 import com.ojerindem.coingecko.utils.Exceptions.UnknownApiPathException
 import com.ojerindem.coingecko.utils.Logging
 import io.circe.parser
@@ -9,9 +9,9 @@ import io.circe.generic.auto._
 
 class CoinGeckoClient(apiVersion: Int) extends Logging {
 
-  val apiAddress = s"https://api.coingecko.com/api/v$apiVersion"
+  def apiAddress = s"https://api.coingecko.com/api/v$apiVersion"
 
-  def ping() = {
+  def ping: String = {
     val pingApiAddress = s"$apiAddress/ping"
     val ping = Http(pingApiAddress).asString
     val response = ping.body
@@ -26,7 +26,7 @@ class CoinGeckoClient(apiVersion: Int) extends Logging {
 }
 
 object CoinGeckoClient {
-  def apply(apiVersion: Int) = {
+  def apply(apiVersion: Int): CoinGeckoClient = {
     new CoinGeckoClient(apiVersion)
   }
 }
