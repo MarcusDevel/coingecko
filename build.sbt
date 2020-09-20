@@ -1,0 +1,20 @@
+name := "coingecko"
+
+version := "0.1"
+
+scalaVersion := "2.13.3"
+
+val circeVersion = "0.13.0"
+
+libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
+
+// https://mvnrepository.com/artifact/com.typesafe/config
+libraryDependencies += "com.typesafe" % "config" % "1.4.0"
+
+libraryDependencies +=  "org.scalaj" %% "scalaj-http" % "2.4.2"
+
+libraryDependencies ++= Seq(
+  "io.circe"  %% "circe-core"     % circeVersion,
+  "io.circe"  %% "circe-generic"  % circeVersion,
+  "io.circe"  %% "circe-parser"   % circeVersion
+)
