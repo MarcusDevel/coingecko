@@ -98,6 +98,10 @@ class Simple(implicit apiAddress: ApiAddress) extends CoinGeckoHttp with Logging
       }
     }
 
+    // TODO: Refactor this
+    // If this is a helper class it can't have knowledge of specifics of the methods it helps
+    // Could be a problem as the cursor structure might not stay consistent to allow
+    // for a further helper function which performs the three lines below
     val response = responseJson
     val doc: Json = parse(response).getOrElse(Json.Null)
     val cursor: ACursor = doc.hcursor.downField(s"${if (contractAddress == "n/a") id else contractAddress}")
