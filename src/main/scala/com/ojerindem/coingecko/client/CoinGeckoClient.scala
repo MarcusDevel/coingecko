@@ -7,7 +7,7 @@ import io.circe.generic.auto._
 /** Wraps the ping api
  *
  *  One API call used as a check for the API availability */
-class CoinGeckoClient(implicit coinGeckoApi: ApiAddress) extends Simple with Logging with CoinGeckoHttp {
+class CoinGeckoClient(implicit coinGeckoApi: ApiAddress) extends Simple with CoinGeckoHttp with Logging {
 
   /** The default api address for the CoinGecko API */
   private def apiAddress = coinGeckoApi.address

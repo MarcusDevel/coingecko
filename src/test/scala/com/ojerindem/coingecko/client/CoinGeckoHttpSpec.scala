@@ -1,7 +1,7 @@
 package com.ojerindem.coingecko.client
 import org.scalatest.flatspec.AnyFlatSpec
 
-class HttpSpec extends AnyFlatSpec with CoinGeckoHttp  {
+class CoinGeckoHttpSpec extends AnyFlatSpec with CoinGeckoHttp  {
   behavior of "CoinGeckHttp"
 
   it should "return the body of an API call" in {
