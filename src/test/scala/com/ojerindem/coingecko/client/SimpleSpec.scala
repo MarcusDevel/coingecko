@@ -1,5 +1,4 @@
 package com.ojerindem.coingecko.client
-import com.ojerindem.coingecko.ApiAddress
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest._
 import matchers.should._

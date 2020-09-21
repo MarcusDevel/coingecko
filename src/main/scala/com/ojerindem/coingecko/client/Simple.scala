@@ -1,15 +1,13 @@
 package com.ojerindem.coingecko.client
 
-import com.ojerindem.coingecko.{ApiAddress, SimplePrice}
 import io.circe._
 import io.circe.parser._
-import com.ojerindem.coingecko.http.CoinGeckoHttp
 
 /** Wraps the Simple API Calls */
-class Simple(implicit apiAddress: ApiAddress) extends CoinGeckoHttp {
+class Simple(implicit apiAddress: ApiAddress) extends CoinGeckoHttp with Logging {
 
   /** Default API address with the simple call added */
-  val simpleAddr = apiAddress.address + "/simple"
+  private val simpleAddr = apiAddress.address + "/simple"
 
   /**
    * Returns a JSON String of simple price information for a given coin/currency pair
