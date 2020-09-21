@@ -1,5 +1,4 @@
 package com.ojerindem.coingecko.client
-import com.ojerindem.coingecko.http.CoinGeckoHttp
 import org.scalatest.flatspec.AnyFlatSpec
 
 class HttpSpec extends AnyFlatSpec with CoinGeckoHttp  {

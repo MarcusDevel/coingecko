@@ -1,6 +1,7 @@
 name := "coingecko"
 
-version := "0.1"
+ThisBuild / organization := "com.ojerindem.coingecko"
+ThisBuild / version      := "0.1-SNAPSHOT"
 
 scalaVersion := "2.13.3"
 
@@ -25,3 +26,5 @@ libraryDependencies ++= Seq(
 coverageMinimum := 80
 coverageFailOnMinimum := true
 coverageExcludedPackages := ".*coingecko.app*"
+
+
