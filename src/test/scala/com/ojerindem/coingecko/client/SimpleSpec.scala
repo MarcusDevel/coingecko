@@ -17,16 +17,12 @@ class SimpleSpec extends AnyFlatSpec with Matchers {
     """\{"ethereum":\{"gbp":\d+.\d+,"gbp_market_cap":\d+.\d+,"gbp_24h_vol":\d+.\d+,"gbp_24h_change":\-?\d+.\d+,"last_updated_at":\d+\}\}"""
   }
 
-  it should "return a formatted string for a valid coin pair as a case class" in {
-    val resultSimplePrice =
+  it should "return a json string for a valid token" in {
+    val resultJson =
       simpleInstance
-        .simplePrice("ethereum","gbp")
-    assert(
-      resultSimplePrice.price_in_currency != 0.0 &
-      resultSimplePrice.market_cap != 0.0 &
-      resultSimplePrice.twenty_four_hr_volume != 0.0 &
-      resultSimplePrice.twenty_four_hr_change != 0.0 &
-      resultSimplePrice.last_updated_at != 0.0)
+        .simpleTokenPriceJson("0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e","gbp")
+    resultJson should fullyMatch regex
+      """\{".+":\{"gbp":\d+.\d+,"gbp_market_cap":\d+.\d+,"gbp_24h_vol":\d+.\d+,"gbp_24h_change":\-?\d+.\d+,"last_updated_at":\d+\}\}"""
   }
 
 }
