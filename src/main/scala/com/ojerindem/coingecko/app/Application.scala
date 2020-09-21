@@ -6,8 +6,10 @@ import com.ojerindem.coingecko.CoinGeckoClientApi
 
 object Application extends App {
   val coinGeckoInstance = CoinGeckoClientApi()
-  print(coinGeckoInstance.ping)
-}
 
-//~/.ivy2/local/com.ojerindem.coingecko/coingecko_2.13/0.1-SNAPSHOT/
-//~/.ivy2/local/com.ojerindem.coingecko/_2.13/coingecko/ivys/ivy.xml
+  println(coinGeckoInstance.simplePriceJson("yearn-finance","gbp"))
+  println(coinGeckoInstance.simplePriceJson("yearn-finance","gbp",false,false,false,false))
+
+  println(coinGeckoInstance.simpleTokenPriceJson("0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e","gbp"))
+  println(coinGeckoInstance.simpleTokenPriceJson("0x0bc529c00c6401aef6d220be8c6ea1667f6ad93e","gbp","ethereum",false,false,false,false))
+}
