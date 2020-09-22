@@ -10,6 +10,7 @@ val circeVersion = "0.13.0"
 libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.9.2"
 
 // https://mvnrepository.com/artifact/com.typesafe/config
+// test
 libraryDependencies += "com.typesafe" % "config" % "1.4.0"
 
 libraryDependencies +=  "org.scalaj" %% "scalaj-http" % "2.4.2"
