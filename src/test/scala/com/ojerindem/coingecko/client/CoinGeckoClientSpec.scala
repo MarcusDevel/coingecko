@@ -1,5 +1,4 @@
 package com.ojerindem.coingecko.client
-import com.ojerindem.coingecko.CoinGeckoClientApi
 import com.ojerindem.coingecko.utils.Exceptions.UnknownApiPathException
 import org.scalatest.flatspec.AnyFlatSpec
 
