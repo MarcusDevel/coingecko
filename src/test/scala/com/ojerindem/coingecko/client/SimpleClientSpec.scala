@@ -4,9 +4,9 @@ import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest._
 import matchers.should._
 
-class SimpleSpec extends AnyFlatSpec with Matchers {
+class SimpleClientSpec extends AnyFlatSpec with Matchers {
   implicit val apiAddress = ApiAddress("https://api.coingecko.com/api/v3")
-  val simpleInstance = new Simple()
+  val simpleInstance = new SimpleClient()
 
   behavior of "Simple"
 

@@ -1,8 +1,11 @@
-import com.typesafe.scalalogging.Logger
-package com.ojerindem.coingecko.client {
-  trait Logging {
-    // Implicit logger used throughout the application
-    // TODO: Ensure the calling Class is referenced in the stdout
-    private [client] implicit val logger = Logger("logger")
-  }
+package com.ojerindem.coingecko.utils
+
+import org.apache.log4j.{BasicConfigurator, Logger}
+trait Logging {
+
+  def configureLogging = BasicConfigurator.configure()
+  // Implicit logger used throughout the application
+  // TODO: Ensure the calling Class is referenced in the stdout
+  implicit val logger: Logger = Logger.getLogger(getClass)
+
 }

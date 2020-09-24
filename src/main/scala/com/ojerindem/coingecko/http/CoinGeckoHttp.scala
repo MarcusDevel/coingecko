@@ -1,4 +1,5 @@
 import scalaj.http.Http
+import com.ojerindem.coingecko.utils.Logging
 
 package com.ojerindem.coingecko.client {
 

@@ -1,10 +1,10 @@
-
-
 import com.ojerindem.coingecko.utils.Exceptions.VsCurrencyNotFoundException
+import com.ojerindem.coingecko.utils.Logging
 
 package com.ojerindem.coingecko.client {
+
   /** Wraps the Simple API Calls */
-  class Simple(implicit apiAddress: ApiAddress) extends CoinGeckoHttp with Logging {
+  class SimpleClient(implicit apiAddress: ApiAddress) extends CoinGeckoHttp with Logging {
 
     /** Default API address with the simple call added */
     private val simpleAddr = apiAddress.address + "/simple"
@@ -108,4 +108,13 @@ package com.ojerindem.coingecko.client {
       response
     }
   }
+
+  object SimpleClient  {
+    def apply(apiVersion: Int = 3): SimpleClient = {
+      /** The default API passed into the Client. API Version is parsed into address here*/
+      implicit def apiAddress = ApiAddress(s"https://api.coingecko.com/api/v$apiVersion")
+      new SimpleClient()
+    }
+  }
+
 }

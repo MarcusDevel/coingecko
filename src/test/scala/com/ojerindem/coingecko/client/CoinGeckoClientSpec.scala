@@ -7,7 +7,7 @@ class CoinGeckoClientSpec extends AnyFlatSpec {
   behavior of "CoinGeckoClient"
 
   it should "return the default 'ping' message" in {
-    assert(CoinGeckoClientApi(3).ping === "(V3) To the Moon!")
+    assert(CoinGeckoClient().ping === "(V3) To the Moon!")
   }
 
   it should "throw an UnknownApiPathException for an incorrect API address" in {
